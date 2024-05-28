@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Formu</title>
+    <link rel="stylesheet" href="Untitled-2.css">
+</head>
+<body>
+    
+    <form id="loginForm">
+        <h2>Giriş Yapın</h2>
+        <input type="text" id="Kullanici Adi" placeholder="Kullanici Adi" autocomplete="false">
+        <input type="password" id="sifre" placeholder="Parola">
+        <input type="submit" value="Giris Yap">
+
+    </form>
+    
+    <div>
+        <form>
+        <input type="number" name="deger1" id="val1"/> 
+        <select id="islem">
+            <option value="1">Carp</option>
+        </select>
+        <input type="number" name="deger2" id="val2" />
+        <a  onclick="hesapla()" />HESAPLA</a>
+        <div id="sonuc1"></div>
+    </form>
+    <table  width="40%">
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+    const calculator = document.getElementById('calculator');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const eposta = document.getElementById('Kullanici Adi').value;
+        const sifre = document.getElementById('sifre').value;
+
+        // Kullanıcı doğrulama, 
+        if (kullaniciadi === 'beyzanlar0' && sifre === '99557788') {
+            calculator.classList.remove('hidden');
+            loginPage.classList.add('hidden');
+        } 
+        else {
+            alert('Kullanici Adi veya Sifre Hatali.');
+        }
+    }
+    );
+    </script>
+
+    <script>
+        function hesapla(){
+            // var val1 = Number(document.getElementById("val1").value)
+            // var val2 = Number(document.getElementById("val2").value)
+
+            var val1 = document.getElementById("val1").value
+            var val2 = document.getElementById("val2").value
+            var islem = document.getElementById("islem").value
+
+                var sonuc =0;
+                if(islem==1){//Çarpma
+                    sonuc = val1*val2;
+                }
+                sonuc = Number(val1)+Number(val2)
+                }
+                document.getElementById('sonuc1').addEventListener('click', hesapla);
+
+var hesapla = function () {
+var sayi1 = Number(document.getElementById('val1').value);
+var sayi2 = Number(document.getElementById('val2').value);
+
+
+document.querySelector('tbody > tr:nth-child(' + (sayi1 + 1) + ') > td:nth-child(' + (sayi2 + 1) + ')').style.background = 'purple';
+document.querySelector('tbody > tr:nth-child(' + (sayi2 + 1) + ') > td:nth-child(' + (sayi1 + 1) + ')').style.background = 'purple';
+};
+
+                  
+                sonucYazdir(sonuc)
+        function sonucYazdir(deger){
+            var sonucYazdir = document.getElementById("sonuc1").innerHTML="<b>Sonuç: "+deger+"</b>"
+        }
+    </script>
+    <script>
+        function dogrula(){
+            var username = document.getElementById("username").value
+            var password = document.getElementById("password").value
+            
+            document.getElementById("userError").innerText=""
+            document.getElementById("passError").innerText=""
+            
+            if(!username && !password){d
+                document.getElementById("userError").innerText="Kullanici Adi Giriniz"
+                // alert("Kullanici Adi ve Sifre Giriniz")
+            }
+            else if(!username){
+                document.getElementById("userError").innerText="Kullanici Adi Giriniz"
+
+                // alert("Kullanici Adi Giriniz")
+            }
+            else if(!password){
+                document.getElementById("passError").innerHTML="<b style='color:red'>Sifre giriniz</b>" 
+
+            }
+            
+        }
+    </script>
+                        
+    <table border="1" width="40%">
+        <script>
+            for(i=0; i<11;i++){
+                document.write("<tr>");
+                        if(i!=0){
+                            document.write('<td><b>'+i+'</b></td>')
+                        }
+                        else{
+                            document.write('<td></td>')
+                        }
+                    for(k=1;k<11;k++){
+                        document.write('<td>')
+                            if(i==0){
+                                document.write('<b>'+k+'</b>')
+                            }
+                            else{
+                               document.write(i*k)
+                            }
+                            document.write('</td>')
+                    }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>
